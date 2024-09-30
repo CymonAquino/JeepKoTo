@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="/CSS/dashboard_css.css" />
+    <link rel="stylesheet" href="/CSS/logout.css"> 
+    
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#" p style="font-size: xx-large;">Dashboard</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" p style="font-size: x-large;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="manage_employee.html">Manage Employees</a>
+              <a class="dropdown-item" href="manage_bus.html">Manage Bus</a>
+              <a class="dropdown-item" href="manage_transactions.html">Transactions</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-danger" onclick="showConfirmation()" p style="font-size: x-large;">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Confirmation Popup -->
+    <div id="confirmation-popup" class="popup">
+        <div class="popup-content">
+            <p>Are you sure you want to logout?</p>
+            <button id="confirm-logout">Yes</button>
+            <button id="cancel-logout">No</button>
+        </div>
+    </div>
+
+   <!-- Dashboard -->
+   <div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title" p style="font-size: xx-large;">Overview</h5>
+              <div class="form-group">
+                <label for="device" p style="font-size: x-large;">Device:</label>
+                <select id="device" class="form-control">
+                  <option value="Bus" p style="font-size: x-large;">Bus #1</option>
+                  <option value="Bus" p style="font-size: x-large;">Bus #2</option>
+                  <option value="Bus"p style="font-size: x-large;">Bus #3</option>
+                </select>
+                <br>
+                <p style="font-size: 25px;">Status: </p>
+                <p style="font-size: 25px;">Employees:</p>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-lg-9">
+        <div class="card">
+          <div class="card-header">
+            <h5>Map</h5>
+          </div>
+          <div class="card-body">
+            <div id="map" style="height: 850px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-realtime"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="/JavaScript/dashboard_js.js"></script>
+    <script src="/JavaScript/logout.js"></script> <!-- Link to your JavaScript file -->
+  </body>
+</html>
